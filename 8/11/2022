@@ -1,0 +1,60 @@
+use [4423-Muhammad Zeeshan];
+
+
+--Question No 1
+/*create table weather
+(
+ID int not null,
+RecordDate date not null,
+temperature int not null,
+primary key(ID)
+);
+
+
+--Question No 2
+create table weather_details
+(
+Desc_ID int not null,
+tempID int references weather(ID),
+Description varchar(255),
+primary key(Desc_ID)
+);
+
+--Question No 3
+EXEC sp_rename 'weather_details.tempID', 'temperatureID', 'column';
+
+*/
+
+--Question No 4
+insert into weather (ID, RecordDate, temperature)
+values
+(1,'2022-11-10',24),
+(2,'2021-11-11',25),
+(3,'2022-11-12',28),
+(4,'2021-11-12',26),
+(5,'2022-11-14',45),
+(6,'2021-11-15',25),
+(7,'2022-11-16',29),
+(8,'2021-11-17',25),
+(9,'2022-11-18',31),
+(10,'2021-11-19',22),
+(11,'2022-11-20',19),
+(12,'2021-11-21',29);
+
+
+insert into weather_details (Desc_ID, temperatureID, Description)
+values
+(1,12,'Its a normal day'),
+(2,11,'Its a rainy day'),
+(3,10,'Its a cold day'),
+(4,9,'Its a normal day'),
+(5,8,'Its a normal day'),
+(6,7,'Its a normal day'),
+(7,6,'Its a normal day'),
+(8,5,'Its a normal day'),
+(9,4,'Its a rainy day'),
+(10,3,'Its a normal day');
+
+
+--Question No 5
+select * from weather where (year(RecordDate)=2022 and temperature>35);
