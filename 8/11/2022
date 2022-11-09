@@ -58,3 +58,7 @@ values
 
 --Question No 5
 select * from weather where (year(RecordDate)=2022 and temperature>35);
+
+--Q7- The temperature are inserted are in Celsius, change all the values to Fahrenheit.
+select ID,RecordDate, (temperature * 9/5 + 32) as temperature
+from weather;
